@@ -42,6 +42,7 @@ public class Ipic extends Theater implements MovieService {
             int remain = 50 - temp;
             String whiteSpace = " ";
 
+            //10th has extra one character(1-2-5-9-10) for alignment of it this if-else statement
             if (i == 9) {
                 System.out.println((i + 1) + " -> " + movies[i] + whiteSpace.repeat(remain - 1) +
                         "$" + (int) (Math.random() * (20 - 10) + 10));
@@ -65,7 +66,7 @@ public class Ipic extends Theater implements MovieService {
 
     @Override
     public void showTheaterInfo() {
-        System.out.println("=== AMC Movie Theater ===\n" +
+        System.out.println("=== IPIC Movie Theater ===\n" +
                 "Number of Rooms     : " + getNumberOfRooms() + "\n" +
                 "Number of Restrooms : " + getNumberOfRestrooms() + "\n" +
                 "Number of Seats     : " + getNumberOfSeats() + "\n" +

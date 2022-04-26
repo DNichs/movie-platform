@@ -44,6 +44,7 @@ public class AMC extends Theater implements MovieService {
             String whiteSpace = " ";
 
             if (i == 9) {
+                //10th has extra one character(1-2-5-9-10) for alignment of it this if-else statement
                 System.out.println((i + 1) + " -> " + movies[i] + whiteSpace.repeat(remain - 1) +
                         "$" + (int) (Math.random() * (20 - 10) + 10));
             } else {
@@ -75,4 +76,5 @@ public class AMC extends Theater implements MovieService {
                 "Drinks              : " + isHasDrinks() + "\n" +
                 "AMC SPECIAL -- VR --: " + isHasVR() + "\n");
     }//end showTheaterInfo
+
 }//end AMC class

@@ -44,6 +44,7 @@ public class Emagine extends Theater implements MovieService {
             int remain = 50 - temp;
             String whiteSpace = " ";
 
+            //10th has extra one character(1-2-5-9-10) for alignment of it this if-else statement
             if (i == 9) {
                 System.out.println((i + 1) + " -> " + movies[i] + whiteSpace.repeat(remain - 1) + "$" + (int) (Math.random() * (20 - 10) + 10));
             } else {
