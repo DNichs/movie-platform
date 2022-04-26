@@ -10,51 +10,138 @@ public class Entertainment {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== Hello & Welcome, Choose a Movie Theatre ===");
-        System.out.print("AMC | Regal | Emagine | Ipic | \t-->\t: ");
+        System.out.print("AMC | Emagine | Ipic | Regal | \t-->\t: ");
         String theater = scanner.nextLine().toLowerCase();
 
         MovieService service = null;
 
         switch (theater) {
             case "amc":
-                service = new AMC(100,5,2,true,false,true,true);
+                service = new AMC(100, 5, 2, true, false, true, true);
                 service.welcomeCustomer();
 
-                while (true){
+                while (true) {
                     System.out.print("Movies | Seats | Info | Quit \t-->\t: ");
                     String option = scanner.nextLine().toLowerCase(Locale.ROOT);
 
-                    if(option.equalsIgnoreCase("movies")){
+                    if (option.equalsIgnoreCase("movies")) {
                         service.showAvailableMovies();
                         System.out.println("==========================================================");
 
-                    }else if(option.equalsIgnoreCase("seats")){
+                    } else if (option.equalsIgnoreCase("seats")) {
                         System.out.print("Pick a movie name --> : ");
                         String movieName = scanner.nextLine();
                         service.showAvailableSeat(movieName);
 
-                    }else if(option.equalsIgnoreCase("info")){
+                    } else if (option.equalsIgnoreCase("info")) {
                         System.out.println("");
                         service.showTheaterInfo();
 
-                    } else if(option.equalsIgnoreCase("quit")){
+                    } else if (option.equalsIgnoreCase("quit")) {
                         break;
 
-                    }else{
+                    } else {
                         System.out.println("INVALID ENTER, PLEASE TRY AGAIN!");
                     }
+                }//end AMC object
+                break;
 
-                }
-                break;
             case "emagine":
+                service = new Emagine(85, 5, 4, false, true,
+                        false, "Welcoming Special Event");
+                service.welcomeCustomer();
+
+                while (true) {
+                    System.out.print("Movies | Seats | Info | Quit \t-->\t: ");
+                    String option = scanner.nextLine().toLowerCase(Locale.ROOT);
+
+                    if (option.equalsIgnoreCase("movies")) {
+                        service.showAvailableMovies();
+                        System.out.println("==========================================================");
+
+                    } else if (option.equalsIgnoreCase("seats")) {
+                        System.out.print("Pick a movie name --> : ");
+                        String movieName = scanner.nextLine();
+                        service.showAvailableSeat(movieName);
+
+                    } else if (option.equalsIgnoreCase("info")) {
+                        System.out.println("");
+                        service.showTheaterInfo();
+
+                    } else if (option.equalsIgnoreCase("quit")) {
+                        break;
+
+                    } else {
+                        System.out.println("INVALID ENTER, PLEASE TRY AGAIN!");
+                    }
+                }//end EMAGINE object
                 break;
+
             case "ipic":
+                service = new Ipic(150, 7, 5, false,
+                        true, false, true);
+                service.welcomeCustomer();
+
+                while (true) {
+                    System.out.print("Movies | Seats | Info | Quit \t-->\t: ");
+                    String option = scanner.nextLine().toLowerCase(Locale.ROOT);
+
+                    if (option.equalsIgnoreCase("movies")) {
+                        service.showAvailableMovies();
+                        System.out.println("==========================================================");
+
+                    } else if (option.equalsIgnoreCase("seats")) {
+                        System.out.print("Pick a movie name --> : ");
+                        String movieName = scanner.nextLine();
+                        service.showAvailableSeat(movieName);
+
+                    } else if (option.equalsIgnoreCase("info")) {
+                        System.out.println("");
+                        service.showTheaterInfo();
+
+                    } else if (option.equalsIgnoreCase("quit")) {
+                        break;
+
+                    } else {
+                        System.out.println("INVALID ENTER, PLEASE TRY AGAIN!");
+                    }
+                }//end IPIC object
                 break;
+
             case "regal":
+                service = new Regal(500, 15, 10, true, true,
+                        true, "Second Floor");
+                service.welcomeCustomer();
+
+                while (true) {
+                    System.out.print("Movies | Seats | Info | Quit \t-->\t: ");
+                    String option = scanner.nextLine().toLowerCase(Locale.ROOT);
+
+                    if (option.equalsIgnoreCase("movies")) {
+                        service.showAvailableMovies();
+                        System.out.println("==========================================================");
+
+                    } else if (option.equalsIgnoreCase("seats")) {
+                        System.out.print("Pick a movie name --> : ");
+                        String movieName = scanner.nextLine();
+                        service.showAvailableSeat(movieName);
+
+                    } else if (option.equalsIgnoreCase("info")) {
+                        System.out.println("");
+                        service.showTheaterInfo();
+
+                    } else if (option.equalsIgnoreCase("quit")) {
+                        break;
+
+                    } else {
+                        System.out.println("INVALID ENTER, PLEASE TRY AGAIN!");
+                    }
+                }//end REGAL object
                 break;
             default:
+                System.out.println("Please make sure only ENTER A THEATRE NAME!");
 
-        }
+        }//end switch
 
 
     }//end main
