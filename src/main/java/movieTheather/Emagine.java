@@ -1,6 +1,8 @@
 package movieTheather;
 
-public class Emagine extends Theater{
+import com.github.javafaker.Faker;
+
+public class Emagine extends Theater implements MovieService{
 
     private String specialEvent;
     public Emagine(int numberOfSeats, int numberOfRooms, int numberOfRestrooms, boolean hasPopcorn, boolean has3D, boolean hasDrinks,String specialEvent) {
@@ -15,5 +17,26 @@ public class Emagine extends Theater{
 
     public void setSpecialEvent(String specialEvent) {
         this.specialEvent = specialEvent;
+    }
+
+    @Override
+    public void welcomeCustomer() {
+        System.out.println("Welcome to EMAGINE!");
+
+    }
+
+    @Override
+    public void showAvailableMovies() {
+
+    }
+
+    @Override
+    public void showAvailableSeat(String movie) {
+
+    }
+
+    @Override
+    public void showTheaterInfo() {
+
     }
 }

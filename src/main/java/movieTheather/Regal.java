@@ -1,6 +1,6 @@
 package movieTheather;
 
-public class Regal extends Theater{
+public class Regal extends Theater implements MovieService{
 
     private String secondFloor;
     public Regal(int numberOfSeats, int numberOfRooms, int numberOfRestrooms, boolean hasPopcorn, boolean has3D, boolean hasDrinks,String secondFloor) {
@@ -14,5 +14,25 @@ public class Regal extends Theater{
 
     public void setSecondFloor(String secondFloor) {
         this.secondFloor = secondFloor;
+    }
+
+    @Override
+    public void welcomeCustomer() {
+        System.out.println("Welcome to REGAL!");
+    }
+
+    @Override
+    public void showAvailableMovies() {
+
+    }
+
+    @Override
+    public void showAvailableSeat(String movie) {
+
+    }
+
+    @Override
+    public void showTheaterInfo() {
+
     }
 }
